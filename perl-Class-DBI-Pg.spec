@@ -14,6 +14,7 @@ Source:         http://www.cpan.org/modules/by-module/Class/%{module}-%{version}
 BuildRequires:	perl(Module::Build)
 BuildRequires:	perl(Class::DBI)
 BuildArch:      noarch
+BuildRoot:      %{_tmppath}/%{name}-%{version}
 
 %description
 Class::DBI::Pg automate the setup of Class::DBI columns and primary key for
