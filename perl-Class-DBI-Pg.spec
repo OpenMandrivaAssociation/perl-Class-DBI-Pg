@@ -1,7 +1,7 @@
 %define module  Class-DBI-Pg
 %define name    perl-%{module}
 %define version 0.09
-%define release %mkrel 1
+%define release %mkrel 3
 
 Name:           %{name}
 Version:        %{version}
