@@ -1,27 +1,27 @@
-%define module  Class-DBI-Pg
-%define name    perl-%{module}
-%define version 0.09
-%define release %mkrel 3
+%define upstream_name    Class-DBI-Pg
+%define upstream_version 0.09
 
-Name:           %{name}
-Version:        %{version}
-Release:        %{release}
-Summary:        Class::DBI extension for Postgres
-License:        GPL or Artistic
-Group:          Development/Perl
-Url:            http://search.cpan.org/dist/%{module}
-Source:         http://www.cpan.org/modules/by-module/Class/%{module}-%{version}.tar.gz
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
+Summary:    Class::DBI extension for Postgres
+License:    GPL+ or Artistic
+Group:      Development/Perl
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/Class/%{upstream_name}-%{upstream_version}.tar.gz
+
 BuildRequires:	perl(Module::Build)
 BuildRequires:	perl(Class::DBI)
 BuildArch:      noarch
-BuildRoot:      %{_tmppath}/%{name}-%{version}
+BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 Class::DBI::Pg automate the setup of Class::DBI columns and primary key for
 Postgres.
 
 %prep
-%setup -q -n %{module}-%{version} 
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Build.PL installdirs=vendor
@@ -42,4 +42,3 @@ rm -rf %{buildroot}
 %doc Changes README
 %{perl_vendorlib}/Class
 %{_mandir}/*/*
-
