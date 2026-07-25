@@ -2,13 +2,13 @@
 %define upstream_version 0.09
 
 Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    4
+Version:    %{upstream_version}
+Release:    5
 
 Summary:    Class::DBI extension for Postgres
 License:    GPL+ or Artistic
 Group:      Development/Perl
-Url:        https://search.cpan.org/dist/%{upstream_name}
+Url:        https://metacpan.org/dist/Class-DBI-Pg
 Source0:    http://www.cpan.org/modules/by-module/Class/%{upstream_name}-%{upstream_version}.tar.gz
 
 BuildRequires:	perl(Module::Build)
