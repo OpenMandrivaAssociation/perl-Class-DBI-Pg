@@ -1,15 +1,13 @@
 %define upstream_name    Class-DBI-Pg
-%define upstream_version 0.09
-
 Name:       perl-%{upstream_name}
-Version:    %{upstream_version}
-Release:    5
+Version:    0.09
+Release:    6
 
 Summary:    Class::DBI extension for Postgres
 License:    GPL+ or Artistic
 Group:      Development/Perl
 Url:        https://metacpan.org/dist/Class-DBI-Pg
-Source0:    http://www.cpan.org/modules/by-module/Class/%{upstream_name}-%{upstream_version}.tar.gz
+Source0:    http://www.cpan.org/modules/by-module/Class/%{upstream_name}-%{version}.tar.gz
 
 BuildRequires:	perl(Module::Build)
 BuildRequires:	perl(Class::DBI)
@@ -21,7 +19,7 @@ Class::DBI::Pg automate the setup of Class::DBI columns and primary key for
 Postgres.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 %{__perl} Build.PL installdirs=vendor
@@ -51,9 +49,7 @@ rm -rf %{buildroot}
 
 * Wed Jul 29 2009 Jérôme Quelin <jquelin@mandriva.org> 0.90.0-1mdv2011.0
 + Revision: 403009
-- rebuild using %%perl_convert_version
-
-* Wed Jul 23 2008 Thierry Vignaud <tv@mandriva.org> 0.09-3mdv2009.0
+- rebuild using %0.09 Wed Jul 23 2008 Thierry Vignaud <tv@mandriva.org> 0.09-3mdv2009.0
 + Revision: 241180
 - rebuild
 - kill re-definition of %%buildroot on Pixel's request
